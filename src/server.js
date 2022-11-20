@@ -31,6 +31,7 @@ testDbConnection();
 app.get('/', (req, res) => res.json({ msg: 'server online' }));
 
 app.use('/api/users', restRouter);
+app.use('/images', express.static('images'));
 
 app.use((req, res) => {
   res.status(404).json({ msg: 'Not found' });
