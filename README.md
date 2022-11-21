@@ -3,6 +3,18 @@
 Here are some snips of assignment requirements implemented.
 
 ## Registration / Login
+Password hashed
+
+```javascript
+async function hashString(input) {
+  const hashedString = await bcrypt.hash(input, 10);
+  return hashedString;
+}
+async function compareHash(input, hash) {
+  const result = bcrypt.compare(input, hash);
+  return result;
+}
+```
 
 Form inputs validation
 
