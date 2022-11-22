@@ -101,7 +101,7 @@ module.exports = (io) => {
       socket.emit('errorOnUpdate', false);
       io.to(id).emit('oneItem', updatedItem);
       const allItems = await ItemSchema.find();
-      socket.emit('items', allItems);
+      io.emit('items', allItems);
     });
   });
 };
